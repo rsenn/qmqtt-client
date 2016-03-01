@@ -13,7 +13,7 @@ CONFIG += c++11
 TARGET = qmqtt-client
 TEMPLATE = app
 
-DEFINES += QMQTT_LIBRARY
+DEFINES += QMQTT_LIBRARY=1
 
 
 #NOTICE: add DYLD_LIBRARY_PATH to build environment.
