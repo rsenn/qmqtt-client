@@ -3,6 +3,7 @@
 # Project created by QtCreator 2013-03-22T21:02:13
 #
 #-------------------------------------------------
+TEMPLATE = app
 
 QT       += core gui network
 
@@ -11,7 +12,6 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 CONFIG += c++11
 
 TARGET = qmqtt-client
-TEMPLATE = app
 
 DEFINES += QMQTT_LIBRARY=1
 
@@ -34,7 +34,7 @@ SOURCES +=    qmqtt/src/qmqtt_client.cpp \
     mainwindow.cpp \
     connform.cpp \
     pubform.cpp \
-    subform.cpp
+    subform.cpp \
         mainwindow.cpp
 
 HEADERS  +=   qmqtt/src/qmqtt.h \
