@@ -35,8 +35,7 @@ SOURCES +=    qmqtt/src/qmqtt_client.cpp \
     mainwindow.cpp \
     connform.cpp \
     pubform.cpp \
-    subform.cpp \
-        mainwindow.cpp
+    subform.cpp
 
 HEADERS  +=   qmqtt/src/qmqtt.h \
     qmqtt/src/qmqtt_client.h \
