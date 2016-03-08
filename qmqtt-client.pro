@@ -20,39 +20,39 @@ DEFINES += QMQTT_LIBRARY=1
 #NOTICE: add DYLD_LIBRARY_PATH to build environment.
 INCLUDEPATH += qmqtt/src
 
-SOURCES +=    qmqtt/src/qmqtt_client.cpp \
-    qmqtt/src/qmqtt_client_p.cpp \
-    qmqtt/src/qmqtt_frame.cpp \
-    qmqtt/src/qmqtt_message.cpp \
-    qmqtt/src/qmqtt_message_p.cpp \
-    qmqtt/src/qmqtt_network.cpp \
-    qmqtt/src/qmqtt_routedmessage.cpp \
-    qmqtt/src/qmqtt_router.cpp \
-    qmqtt/src/qmqtt_routesubscription.cpp \
-    qmqtt/src/qmqtt_socket.cpp \
-    qmqtt/src/qmqtt_timer.cpp \
+SOURCES +=    qmqtt/qmqtt_client.cpp \
+    qmqtt/qmqtt_client_p.cpp \
+    qmqtt/qmqtt_frame.cpp \
+    qmqtt/qmqtt_message.cpp \
+    qmqtt/qmqtt_message_p.cpp \
+    qmqtt/qmqtt_network.cpp \
+    qmqtt/qmqtt_routedmessage.cpp \
+    qmqtt/qmqtt_router.cpp \
+    qmqtt/qmqtt_routesubscription.cpp \
+    qmqtt/qmqtt_socket.cpp \
+    qmqtt/qmqtt_timer.cpp \
     main.cpp \
     mainwindow.cpp \
     connform.cpp \
     pubform.cpp \
     subform.cpp
 
-HEADERS  +=   qmqtt/src/qmqtt.h \
-    qmqtt/src/qmqtt_client.h \
-    qmqtt/src/qmqtt_client_p.h \
-    qmqtt/src/qmqtt_frame.h \
-    qmqtt/src/qmqtt_global.h \
-    qmqtt/src/qmqtt_message.h \
-    qmqtt/src/qmqtt_message_p.h \
-    qmqtt/src/qmqtt_network.h \
-    qmqtt/src/qmqtt_networkinterface.h \
-    qmqtt/src/qmqtt_routedmessage.h \
-    qmqtt/src/qmqtt_router.h \
-    qmqtt/src/qmqtt_routesubscription.h \
-    qmqtt/src/qmqtt_socket.h \
-    qmqtt/src/qmqtt_socketinterface.h \
-    qmqtt/src/qmqtt_timer.h \
-    qmqtt/src/qmqtt_timerinterface.h \
+HEADERS  +=   qmqtt/qmqtt.h \
+    qmqtt/qmqtt_client.h \
+    qmqtt/qmqtt_client_p.h \
+    qmqtt/qmqtt_frame.h \
+    qmqtt/qmqtt_global.h \
+    qmqtt/qmqtt_message.h \
+    qmqtt/qmqtt_message_p.h \
+    qmqtt/qmqtt_network.h \
+    qmqtt/qmqtt_networkinterface.h \
+    qmqtt/qmqtt_routedmessage.h \
+    qmqtt/qmqtt_router.h \
+    qmqtt/qmqtt_routesubscription.h \
+    qmqtt/qmqtt_socket.h \
+    qmqtt/qmqtt_socketinterface.h \
+    qmqtt/qmqtt_timer.h \
+    qmqtt/qmqtt_timerinterface.h \
     mainwindow.h \
     connform.h \
     pubform.h \
