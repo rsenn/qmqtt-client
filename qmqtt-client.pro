@@ -10,6 +10,7 @@ QT       += core gui network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
+gcc: QMAKE_CXXFLAGS_CXX11 = -std=c++14
 
 TARGET = qmqtt-client
 
