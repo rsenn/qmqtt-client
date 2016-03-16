@@ -35,9 +35,9 @@
 #if defined(QMQTT_STATIC)
 #  define QMQTTSHARED_EXPORT 
 #elif defined(QMQTT_LIBRARY)
-#  define QMQTTSHARED_EXPORT Q_DECL_EXPORT
+#  define QMQTTSHARED_EXPORT  // Q_DECL_EXPORT
 #else
-#  define QMQTTSHARED_EXPORT Q_DECL_IMPORT
+#  define QMQTTSHARED_EXPORT  // Q_DECL_IMPORT
 #endif
 
 #include <QObject>
