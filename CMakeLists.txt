@@ -18,9 +18,22 @@ if(CMAKE_COMPILER_IS_GNUCXX)
 endif()
 
 # Find the QtWidgets library
-find_package(Qt5Widgets)
+find_package(Qt5Widgets REQUIRED)
 
-include_directories("${CMAKE_SOURCE_DIR}/mqtt_client_cpp/include")
+if(Qt5Widgets_INCLUDES)
+  include_directories("${Qt5Widgets_INCLUDES}")
+ endif()
+# We need add -DQT_WIDGETS_LIB when using QtWidgets in Qt 5.
+  add_definitions(${Qt5Widgets_DEFINITIONS})
+
+# Executables fail to build with Qt 5 in the default configuration
+  # without -fPIE. We add that here.
+  set(CMAKE_CXX_FLAGS "${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
+
+include_directories(
+  "${CMAKE_SOURCE_DIR}/mqtt_client_cpp/include"
+  "${CMAKE_SOURCE_DIR}/qmqtt"
+)
 
 # Tell CMake to create the helloworld executable
 add_executable(qmqtt-client  
@@ -36,5 +49,5 @@ endif(UNIX)
 
 
 # Use the Widgets module from Qt 5.
-target_link_libraries(qmqtt-client Qt5::Widgets ${EXTRA_LIBRARIES})
+target_link_libraries(qmqtt-client Qt5::Widgets ${EXTRA_LIBRARIES} ${Qt5Widgets_LIBRARIES})
 
