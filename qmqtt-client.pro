@@ -18,7 +18,7 @@ DEFINES += QMQTT_LIBRARY=1
 
 
 #NOTICE: add DYLD_LIBRARY_PATH to build environment.
-INCLUDEPATH += qmqtt/src
+INCLUDEPATH += $$PWD/qmqtt/src $$PWD/qmqtt 
 
 SOURCES +=    qmqtt/qmqtt_client.cpp \
     qmqtt/qmqtt_client_p.cpp \
