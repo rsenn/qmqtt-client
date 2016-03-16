@@ -20,6 +20,7 @@ if(CMAKE_COMPILER_IS_GNUCXX)
 	add_definitions(-std=gnu++1y)
 endif()
 
+add_definitions(-DQMQTT_LIBRARY=1)
 # Find the QtWidgets library
 find_package(Qt5 COMPONENTS Widgets Network PrintSupport REQUIRED)
 
@@ -40,7 +41,9 @@ include_directories(
 
 # Tell CMake to create the helloworld executable
 add_executable(qmqtt-client  
-	connform.cpp connform.h main.cpp mainwindow.cpp mainwindow.h mqttform.h pubform.cpp pubform.h qmqtt/qmqtt.h qmqtt/qmqtt_client.cpp qmqtt/qmqtt_client.h qmqtt/qmqtt_client_p.cpp qmqtt/qmqtt_client_p.h qmqtt/qmqtt_frame.cpp qmqtt/qmqtt_frame.h qmqtt/qmqtt_global.h qmqtt/qmqtt_message.cpp qmqtt/qmqtt_message.h qmqtt/qmqtt_message_p.cpp qmqtt/qmqtt_message_p.h qmqtt/qmqtt_network.cpp qmqtt/qmqtt_network.h qmqtt/qmqtt_networkinterface.h qmqtt/qmqtt_routedmessage.cpp qmqtt/qmqtt_routedmessage.h qmqtt/qmqtt_router.cpp qmqtt/qmqtt_router.h qmqtt/qmqtt_routesubscription.cpp qmqtt/qmqtt_routesubscription.h qmqtt/qmqtt_socket.cpp qmqtt/qmqtt_socket.h qmqtt/qmqtt_socketinterface.h qmqtt/qmqtt_timer.cpp qmqtt/qmqtt_timer.h qmqtt/qmqtt_timerinterface.h subform.cpp subform.h
+	connform.cpp connform.h main.cpp mainwindow.cpp mainwindow.h mqttform.h pubform.cpp pubform.h
+  qmqtt/qmqtt.h qmqtt/qmqtt_client.cpp qmqtt/qmqtt_client.h qmqtt/qmqtt_client_p.cpp qmqtt/qmqtt_client_p.h qmqtt/qmqtt_frame.cpp qmqtt/qmqtt_frame.h qmqtt/qmqtt_global.h qmqtt/qmqtt_message.cpp qmqtt/qmqtt_message.h qmqtt/qmqtt_message_p.cpp qmqtt/qmqtt_message_p.h qmqtt/qmqtt_network.cpp qmqtt/qmqtt_network.h qmqtt/qmqtt_networkinterface.h qmqtt/qmqtt_routedmessage.cpp qmqtt/qmqtt_routedmessage.h qmqtt/qmqtt_router.cpp qmqtt/qmqtt_router.h qmqtt/qmqtt_routesubscription.cpp qmqtt/qmqtt_routesubscription.h qmqtt/qmqtt_socket.cpp qmqtt/qmqtt_socket.h qmqtt/qmqtt_socketinterface.h qmqtt/qmqtt_timer.cpp qmqtt/qmqtt_timer.h qmqtt/qmqtt_timerinterface.h 
+  subform.cpp subform.h
 #connform.ui mainwindow.ui pubform.ui subform.ui
 
 	)
