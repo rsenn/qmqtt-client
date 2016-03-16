@@ -10,9 +10,6 @@ project(qmqtt-client)
 
 # Find includes in corresponding build directories
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-# Instruct CMake to run moc automatically when needed.
-
-
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 
@@ -23,7 +20,13 @@ endif()
 add_definitions(-DQMQTT_LIBRARY=1)
 
 # Find the QtWidgets library
-find_package(Qt5 COMPONENTS Widgets Network PrintSupport REQUIRED)
+#find_package(Qt5 COMPONENTS Widgets Network PrintSupport REQUIRED)
+#find_package(Qt5Widgets REQUIRED)
+find_package(Qt5 5.5.1 CONFIG COMPONENTS Widgets Network PrintSupport)
+
+#qt5_use_modules(qmqtt-client Widgets Network PrintSupport )
+
+
 
 if(Qt5Widgets_INCLUDES)
   include_directories("${Qt5Widgets_INCLUDES}")
@@ -60,16 +63,16 @@ add_executable(qmqtt-client
     qmqtt/qmqtt_timer.cpp
     subform.cpp
 
-    moc_connform.cpp
-    moc_mainwindow.cpp
-    moc_pubform.cpp
-    moc_qmqtt_client.cpp
-    moc_qmqtt_network.cpp
-    moc_qmqtt_router.cpp
-    moc_qmqtt_routesubscription.cpp
-    moc_qmqtt_socket.cpp
-    moc_qmqtt_timer.cpp
-    moc_subform.cpp
+#    moc_connform.cpp
+#    moc_mainwindow.cpp
+#    moc_pubform.cpp
+#    moc_qmqtt_client.cpp
+#    moc_qmqtt_network.cpp
+#    moc_qmqtt_router.cpp
+#    moc_qmqtt_routesubscription.cpp
+#    moc_qmqtt_socket.cpp
+#    moc_qmqtt_timer.cpp
+#    moc_subform.cpp
 #  ${CMAKE_BINARY_DIR}/qmqtt-client_automoc.cpp
 	)
 
@@ -81,5 +84,8 @@ endif(UNIX)
 
 
 # Use the Widgets module from Qt 5.
-target_link_libraries(qmqtt-client Qt5::Widgets Qt5::Network Qt5::PrintSupport ${EXTRA_LIBRARIES} ${Qt5Widgets_LIBRARIES})
+target_link_libraries(qmqtt-client
+  Qt5::Widgets 
+  Qt5::Network Qt5::PrintSupport ${EXTRA_LIBRARIES} #${Qt5Widgets_LIBRARIES}
+  )
 
