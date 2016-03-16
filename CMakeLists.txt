@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.11)
 
-project(MQTT-Plot)
+project(qmqtt-client)
 
 #if(NOT CMAKE_MODULES_DIR) 
 #	set(CMAKE_MODULES_DIR "${CMAKE_SOURCE_DIR}/CMakeModules")
@@ -23,11 +23,12 @@ find_package(Qt5Widgets)
 include_directories("${CMAKE_SOURCE_DIR}/mqtt_client_cpp/include")
 
 # Tell CMake to create the helloworld executable
-add_executable(MQTT-Plot  
-	main.cpp mainwindow.cpp mainwindow.h mqtt_client_cpp/include/mqtt/client.hpp mqtt_client_cpp/include/mqtt/connect_flags.hpp mqtt_client_cpp/include/mqtt/connect_return_code.hpp mqtt_client_cpp/include/mqtt/control_packet_type.hpp mqtt_client_cpp/include/mqtt/encoded_length.hpp mqtt_client_cpp/include/mqtt/exception.hpp mqtt_client_cpp/include/mqtt/fixed_header.hpp mqtt_client_cpp/include/mqtt/hexdump.hpp mqtt_client_cpp/include/mqtt/publish.hpp mqtt_client_cpp/include/mqtt/qos.hpp mqtt_client_cpp/include/mqtt/remaining_length.hpp mqtt_client_cpp/include/mqtt/session_present.hpp mqtt_client_cpp/include/mqtt/str_connect_return_code.hpp mqtt_client_cpp/include/mqtt/str_qos.hpp mqtt_client_cpp/include/mqtt/utf8encoded_strings.hpp mqtt_client_cpp/include/mqtt/will.hpp mqtt_client_cpp/include/mqtt_client_cpp.hpp QCustomPlot/qcustomplot.cpp QCustomPlot/qcustomplot.h updatethread.cpp updatethread.h
+add_executable(qmqtt-client  
+	connform.cpp connform.h main.cpp mainwindow.cpp mainwindow.h mqttform.h pubform.cpp pubform.h qmqtt/qmqtt.h qmqtt/qmqtt_client.cpp qmqtt/qmqtt_client.h qmqtt/qmqtt_client_p.cpp qmqtt/qmqtt_client_p.h qmqtt/qmqtt_frame.cpp qmqtt/qmqtt_frame.h qmqtt/qmqtt_global.h qmqtt/qmqtt_message.cpp qmqtt/qmqtt_message.h qmqtt/qmqtt_message_p.cpp qmqtt/qmqtt_message_p.h qmqtt/qmqtt_network.cpp qmqtt/qmqtt_network.h qmqtt/qmqtt_networkinterface.h qmqtt/qmqtt_routedmessage.cpp qmqtt/qmqtt_routedmessage.h qmqtt/qmqtt_router.cpp qmqtt/qmqtt_router.h qmqtt/qmqtt_routesubscription.cpp qmqtt/qmqtt_routesubscription.h qmqtt/qmqtt_socket.cpp qmqtt/qmqtt_socket.h qmqtt/qmqtt_socketinterface.h qmqtt/qmqtt_timer.cpp qmqtt/qmqtt_timer.h qmqtt/qmqtt_timerinterface.h subform.cpp subform.h
+
 	)
 
-#target_link_libraries(MQTT-Plot ${EXTRA_LIBRARIES})
+#target_link_libraries(qmqtt-client ${EXTRA_LIBRARIES})
 if(UNIX)
 	set(EXTRA_LIBRARIES ${EXTRA_LIBRARIES} pthread)
 
@@ -35,5 +36,5 @@ endif(UNIX)
 
 
 # Use the Widgets module from Qt 5.
-target_link_libraries(MQTT-Plot Qt5::Widgets ${EXTRA_LIBRARIES})
+target_link_libraries(qmqtt-client Qt5::Widgets ${EXTRA_LIBRARIES})
 
