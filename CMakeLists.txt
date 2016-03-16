@@ -18,7 +18,7 @@ if(CMAKE_COMPILER_IS_GNUCXX)
 endif()
 
 # Find the QtWidgets library
-find_package(Qt5Widgets REQUIRED)
+find_package(Qt5 COMPONENTS Widgets Network PrintSupport REQUIRED)
 
 if(Qt5Widgets_INCLUDES)
   include_directories("${Qt5Widgets_INCLUDES}")
@@ -49,5 +49,5 @@ endif(UNIX)
 
 
 # Use the Widgets module from Qt 5.
-target_link_libraries(qmqtt-client Qt5::Widgets ${EXTRA_LIBRARIES} ${Qt5Widgets_LIBRARIES})
+target_link_libraries(qmqtt-client Qt5::Widgets Qt5::Network Qt5::PrintSupport ${EXTRA_LIBRARIES} ${Qt5Widgets_LIBRARIES})
 
